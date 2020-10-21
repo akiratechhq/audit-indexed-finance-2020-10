@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/mocks/tests/ControllerTest.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/mocks/tests/</a> ControllerTest.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>76/80</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>13/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>13/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>76/80</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.6.0;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import {
+  IUniswapV2Pair
+} from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol";
+import {
+  IUniswapV2Factory
+} from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
+import {
+  IUniswapV2Router02
+} from "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
+import { UniSwapV2PriceOracle } from "../../UniSwapV2PriceOracle.sol";
+import {
+  MarketCapSqrtController,
+  PoolInitializer,
+  IPool,
+  UnboundTokenSeller
+} from "../../MarketCapSqrtController.sol";
+import { MockERC20, TestTokenMarkets } from "./util/TestTokenMarkets.sol";
+import "./util/Diff.sol";
+import "./util/TestOrder.sol";
+import "../../lib/Babylonian.sol";
+&nbsp;
+&nbsp;
+contract ControllerTest is TestTokenMarkets, Diff, TestOrder {
+  MarketCapSqrtController public controller;
+  PoolInitializer internal _initializer;
+  UniSwapV2PriceOracle internal _shortOracle;
+  IPool internal _pool;
+  using Babylonian for uint;
+&nbsp;
+  constructor(
+    MockERC20 _weth,
+    IUniswapV2Factory _factory,
+    IUniswapV2Router02 _router,
+    MarketCapSqrtController _controller,
+    UniSwapV2PriceOracle _shortTermOracle
+  ) public TestTokenMarkets(_weth, _factory, _router) {
+    controller = _controller;
+    _shortOracle = _shortTermOracle;
+  }
+&nbsp;
+  function init() public {
+    _deployTokens();
+  }
+&nbsp;
+  function init2() public {
+    _deployMarkets();
+  }
+&nbsp;
+  function init3() public markTime {
+    controller.createCategory(keccak256("Category 1"));
+    address[] memory tokens = new address[](5);
+    tokens[0] = address(token1);
+    tokens[1] = address(token2);
+    tokens[2] = address(token3);
+    tokens[3] = address(token4);
+    tokens[4] = address(token5);
+&nbsp;
+    controller.addTokens(1, tokens);
+  }
+&nbsp;
+  function init4() public testIndex(0) forceDelay(2 days) {
+    _addLiquidityAll();
+    address[] memory sortedTokens = tokensOrderedByPrice();
+    controller.orderCategoryTokensByMarketCap(1, sortedTokens);
+    _shortOracle.updatePrices(tokensOrderedByPrice());
+  }
+&nbsp;
+  function _getExpectedTokensAndBalances(uint256 wethValue)
+    internal
+    view
+    returns (
+      address[] memory expectedTokens,
+      uint256[] memory expectedBalances
+    )
+  {
+    expectedTokens = tokensOrderedByPrice();
+    uint256[] memory marketCaps = marketCapsOrderedByPrice(_liquidityAll);
+    uint256[] memory prices = orderedPrices();
+    expectedBalances = new uint256[](5);
+    uint256 mcapSqrtSum = 0;
+    for (uint256 i = 0; i &lt; 5; i++) {
+      uint256 mcapSqrt = marketCaps[i].sqrt();
+      mcapSqrtSum += mcapSqrt;
+    }
+    for (uint256 i = 0; i &lt; 5; i++) {
+      uint256 mcapSqrt = marketCaps[i].sqrt();
+      uint256 expectedValue = (wethValue * mcapSqrt) / mcapSqrtSum;
+      expectedBalances[i] = expectedValue / prices[i];
+    }
+  }
+&nbsp;
+  function test_getInitialTokensAndBalances() external testIndex(1) {
+    uint256 wethValue = 5e18;
+    (
+      address[] memory expectedTokens,
+      uint256[] memory expectedBalances
+    ) = _getExpectedTokensAndBalances(wethValue);
+    (
+      address[] memory actualTokens,
+      uint256[] memory actualBalances
+    ) = controller.getInitialTokensAndBalances(1, 5, uint144(wethValue));
+    testArrayDeepEq(
+      expectedTokens,
+      actualTokens,
+      "Error: Function returned wrong tokens for category."
+    );
+    testUintArrayDiff(
+      expectedBalances,
+      actualBalances,
+      "Error: Function returned wrong balances for tokens."
+    );
+  }
+&nbsp;
+  function test_prepareIndexPool() external testIndex(2) forceDelay(1 hours) {
+    uint256 wethValue = 5e18;
+    (
+      address poolAddress,
+      address initializerAddress
+    ) = controller.prepareIndexPool(
+      1,
+      5,
+      wethValue,
+      "TestPool",
+      "TPI"
+    );
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      poolAddress == controller.computePoolAddress(1, 5),
+      "Error: Unexpected pool address"
+    );
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      initializerAddress == controller.computeInitializerAddress(poolAddress),
+      "Error: Unexpected initializer address."
+    );
+    _initializer = PoolInitializer(initializerAddress);
+    _pool = IPool(poolAddress);
+    (
+      address[] memory expectedTokens,
+      uint256[] memory expectedBalances
+    ) = _getExpectedTokensAndBalances(wethValue);
+    address[] memory actualTokens = _initializer.getDesiredTokens();
+    uint256[] memory actualBalances = _initializer.getDesiredAmounts(actualTokens);
+    testArrayDeepEq(
+      expectedTokens,
+      actualTokens,
+      "Error: Pool initializer had unexpected tokens."
+    );
+    testUintArrayDiff(
+      expectedBalances,
+      actualBalances,
+      "Error: Pool initializer had unexpected target values."
+    );
+  }
+&nbsp;
+  function test_finishPreparedIndexPool() external testIndex(3) {
+    address[] memory tokens = tokensOrderedByPrice();
+    uint256[] memory amounts = _initializer.getDesiredAmounts(tokens);
+    for (uint256 i = 0; i &lt; 5; i++) {
+      MockERC20(tokens[i]).getFreeTokens(address(this), amounts[i]);
+      MockERC20(tokens[i]).approve(address(_initializer), amounts[i]);
+    }
+    _initializer.contributeTokens(tokens, amounts, 0);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      _initializer.getCreditOf(address(this)) == _initializer.getTotalCredit(),
+      "Error: Caller did not receive all credit."
+    );
+    _initializer.finish();
+    _initializer.claimTokens();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      _initializer.getCreditOf(address(this)) == 0,
+      "Error: Caller's credit not zero after claim."
+    );
+    uint256 balance = _pool.balanceOf(address(this));
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(balance == 1e20, "Error: Initializer did not give 100 pool tokens.");
+  }
+&nbsp;
+  function test_setMaxPoolTokens() external testIndex(4) {
+    uint256 max = 1e21; 
+    controller.setMaxPoolTokens(address(_pool), max);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      _pool.getMaxPoolTokens() == max,
+      "Error: maxPoolTokens not set."
+    );
+  }
+&nbsp;
+  function test_setDefaultSellerPremium() external testIndex(5) {
+    try controller.setDefaultSellerPremium(0) {
+<span class="cstat-no" title="statement not covered" >      revert("Expected Error")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_PREMIUM"),
+        "Error: Expected ERR_PREMIUM error message."
+      );
+    }
+&nbsp;
+    try controller.setDefaultSellerPremium(20) {
+<span class="cstat-no" title="statement not covered" >      revert("Expected Error")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_PREMIUM"),
+        "Error: Expected ERR_PREMIUM error message."
+      );
+    }
+&nbsp;
+    controller.setDefaultSellerPremium(1);
+    uint256 premium = controller.defaultSellerPremium();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(premium == 1, "Error: default premium not set.");
+  }
+&nbsp;
+  function test_updateSellerPremiumToDefault() external testIndex(6) {
+    address sellerAddress = controller.computeSellerAddress(address(_pool));
+    controller.updateSellerPremiumToDefault(sellerAddress);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      UnboundTokenSeller(sellerAddress).getPremiumPercent() == 1,
+      "Error: Token seller premium not set."
+    );
+  }
+&nbsp;
+  function test_setSwapFee() external testIndex(7) {
+    try controller.setSwapFee(address(_pool), 1e17 + 1) {
+<span class="cstat-no" title="statement not covered" >      revert("Expected setSwapFee to revert.")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_MAX_FEE"),
+        "Error: Expected ERR_MAX_FEE error message."
+      );
+    }
+    try controller.setSwapFee(address(_pool), 1e12 - 1) {
+<span class="cstat-no" title="statement not covered" >      revert("Expected setSwapFee to revert.")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_MIN_FEE"),
+        "Error: Expected ERR_MIN_FEE error message."
+      );
+    }
+    uint256 fee = 1e15;
+    controller.setSwapFee(address(_pool), fee);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      _pool.getSwapFee() == fee,
+      "Error: Swap fee not set on pool"
+    );
+  }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 16 2020 20:12:37 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

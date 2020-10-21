@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/mocks/tests/ProxyTest.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/mocks/tests/</a> ProxyTest.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>57/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>21/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>17/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>57/60</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.6.0;
+&nbsp;
+import "../../proxies/DelegateCallProxyManager.sol";
+import { SaltyLib as Salty } from "../../proxies/SaltyLib.sol";
+import "./util/TestOrder.sol";
+&nbsp;
+&nbsp;
+contract MockProxyLogic1 {
+  uint256 internal _value = 0;
+&nbsp;
+  function incrementValue() external {
+    _value += 1;
+  }
+&nbsp;
+  function decrementValue() external {
+    _value -= 1;
+  }
+&nbsp;
+  function getValue() external view returns (uint) {
+    return _value;
+  }
+}
+&nbsp;
+&nbsp;
+contract MockProxyLogic2 {
+  uint256 internal _value = 0;
+&nbsp;
+  function incrementValue() external {
+    _value += 2;
+  }
+&nbsp;
+  function decrementValue() external {
+    _value -= 2;
+  }
+&nbsp;
+  function getValue() external view returns (uint) {
+    return _value;
+  }
+}
+&nbsp;
+&nbsp;
+contract ApprovalTest {
+  bytes32 internal constant TEST_IMPLEMENTATION_ID = keccak256("ProxyLogic.sol");
+  function deploy(DelegateCallProxyManager manager, bytes32 salt) external returns (address proxyAddress) {
+    return manager.deployProxyManyToOne(TEST_IMPLEMENTATION_ID, salt);
+  }
+}
+&nbsp;
+&nbsp;
+contract ProxyTest is TestOrder {
+  bytes32 internal constant TEST_IMPLEMENTATION_ID = keccak256("ProxyLogic.sol");
+  DelegateCallProxyManager public manager;
+  ApprovalTest internal _approvalTest;
+  MockProxyLogic1 implementation1;
+  MockProxyLogic2 implementation2;
+  address proxyAddressMT1;
+  address proxyAddress1T1;
+&nbsp;
+  constructor() public {
+    manager = new DelegateCallProxyManager();
+    _approvalTest = new ApprovalTest();
+    implementation1 = new MockProxyLogic1();
+    implementation2 = new MockProxyLogic2();
+  }
+&nbsp;
+  function test_deployInvalidImplementation() external testIndex(0) {
+    try manager.deployProxyManyToOne(TEST_IMPLEMENTATION_ID, keccak256("Salt1")) {
+<span class="cstat-no" title="statement not covered" >      revert("Expected error.")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_IMPLEMENTATION_ID"),
+        "Error: Expected ERR_IMPLEMENTATION_ID error message."
+      );
+    }
+  }
+&nbsp;
+  function test_createManyToOneProxyRelationship() external testIndex(1) {
+    manager.createManyToOneProxyRelationship(TEST_IMPLEMENTATION_ID, address(implementation1));
+    address implHolder = manager.getImplementationHolder(TEST_IMPLEMENTATION_ID);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      implHolder == manager.computeHolderAddressManyToOne(TEST_IMPLEMENTATION_ID),
+      "Error: Unexpected implementation holder address"
+    );
+    (bool success, bytes memory data) = implHolder.call("");
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(success, "Error: Failed to query implementation address.");
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      abi.decode((data), (address)) == address(implementation1),
+      "Error: Implementation holder returned unexpected implementation address."
+    );
+  }
+&nbsp;
+  function test_unapprovedDeployer() external testIndex(2) {
+    try _approvalTest.deploy(manager, keccak256("Salt1")) {
+<span class="cstat-no" title="statement not covered" >      revert("Expected error")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_NOT_APPROVED"),
+        "Error: Expected ERR_NOT_APPROVED error message."
+      );
+    }
+  }
+&nbsp;
+  function test_approveDeployer() external testIndex(3) {
+    manager.approveDeployer(address(_approvalTest));
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      manager.isApprovedDeployer(address(_approvalTest)),
+      "Error: Deployer not approved."
+    );
+  }
+&nbsp;
+  function test_deployProxyManyToOne() external testIndex(4) {
+    address expectedAddress = Salty.computeProxyAddressManyToOne(
+      address(manager),
+      address(_approvalTest),
+      TEST_IMPLEMENTATION_ID,
+      keccak256("Salt1")
+    );
+    proxyAddressMT1 = _approvalTest.deploy(manager, keccak256("Salt1"));
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      proxyAddressMT1 == expectedAddress,
+      "Error: unexpected proxy address."
+    );
+    MockProxyLogic1 proxy = MockProxyLogic1(proxyAddressMT1);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+    proxy.incrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 1, "Error: Expected proxy to return 1 for stored value.");
+    proxy.decrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+  }
+&nbsp;
+  function test_revokeDeployerApproval() external testIndex(5) {
+    manager.revokeDeployerApproval(address(_approvalTest));
+    try _approvalTest.deploy(manager, keccak256("Salt2")) {
+<span class="cstat-no" title="statement not covered" >      revert("Expected error")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_NOT_APPROVED"),
+        "Error: Expected ERR_NOT_APPROVED error message."
+      );
+    }
+  }
+&nbsp;
+  function test_setImplementationAddressManyToOne() external testIndex(6) {
+    manager.setImplementationAddressManyToOne(TEST_IMPLEMENTATION_ID, address(implementation2));
+    MockProxyLogic2 proxy = MockProxyLogic2(proxyAddressMT1);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+    proxy.incrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 2, "Error: Expected proxy to return 2 for stored value.");
+    proxy.decrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+  }
+&nbsp;
+  function test_deployProxyOneToOne() external testIndex(7) {
+    proxyAddress1T1 = manager.deployProxyOneToOne(
+      keccak256("Salty"), address(implementation1)
+    );
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      proxyAddress1T1 == Salty.computeProxyAddressOneToOne(
+        address(manager),
+        address(this),
+        keccak256("Salty")
+      ),
+      "Error: Unexpected proxy address."
+    );
+    MockProxyLogic1 proxy = MockProxyLogic1(proxyAddress1T1);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+    proxy.incrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 1, "Error: Expected proxy to return 1 for stored value.");
+    proxy.decrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+  }
+&nbsp;
+  function test_setImplementationAddressOneToOne() external testIndex(8) {
+    manager.setImplementationAddressOneToOne(
+      proxyAddress1T1, address(implementation2)
+    );
+    MockProxyLogic2 proxy = MockProxyLogic2(proxyAddress1T1);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+    proxy.incrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 2, "Error: Expected proxy to return 2 for stored value.");
+    proxy.decrementValue();
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(proxy.getValue() == 0, "Error: Expected proxy to return 0 for stored value.");
+  }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 16 2020 20:12:37 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

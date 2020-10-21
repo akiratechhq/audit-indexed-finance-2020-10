@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/balancer/BConst.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/balancer/</a> BConst.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/0</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.6.0;
+&nbsp;
+&nbsp;
+/************************************************************************************************
+Originally from https://github.com/balancer-labs/balancer-core/blob/master/contracts/BConst.sol
+&nbsp;
+This source code has been modified from the original, which was copied from the github repository
+at commit hash f4ed5d65362a8d6cec21662fb6eae233b0babc1f.
+&nbsp;
+Subject to the GPL-3.0 license
+*************************************************************************************************/
+&nbsp;
+&nbsp;
+contract BConst {
+  uint256 public constant VERSION_NUMBER = 0;
+&nbsp;
+/* ---  Weight Updates  --- */
+&nbsp;
+  // Minimum time passed between each weight update for a token.
+  uint256 internal constant WEIGHT_UPDATE_DELAY = 1 hours;
+&nbsp;
+  // Maximum percent by which a weight can adjust at a time
+  // relative to the current weight.
+  // The number of iterations needed to move from weight A to
+  // weight B is the floor of:
+  // (A &gt; B): (ln(A) - ln(B)) / ln(1.01)
+  // (B &gt; A): (ln(A) - ln(B)) / ln(0.99)
+  uint256 internal constant WEIGHT_CHANGE_PCT = BONE/100;
+&nbsp;
+  uint256 internal constant BONE = 10**18;
+&nbsp;
+  uint256 internal constant MIN_BOUND_TOKENS = 2;
+  uint256 internal constant MAX_BOUND_TOKENS = 8;
+&nbsp;
+  // Minimum swap fee.
+  uint256 internal constant MIN_FEE = BONE / 10**6;
+  // Maximum swap or exit fee.
+  uint256 internal constant MAX_FEE = BONE / 10;
+  // Actual exit fee.
+  uint256 internal constant EXIT_FEE = 0;
+&nbsp;
+  // Default total of all desired weights. Can differ by up to BONE.
+  uint256 internal constant DEFAULT_TOTAL_WEIGHT = BONE * 25;
+  // Minimum weight for any token (1/100).
+  uint256 internal constant MIN_WEIGHT = BONE / 4;
+  uint256 internal constant MAX_WEIGHT = BONE * 50;
+  // Maximum total weight.
+  uint256 internal constant MAX_TOTAL_WEIGHT = BONE * 26;
+  // Minimum balance for a token (only applied at initialization)
+  uint256 internal constant MIN_BALANCE = BONE / 10**12;
+  // Initial pool tokens
+  uint256 internal constant INIT_POOL_SUPPLY = BONE * 100;
+&nbsp;
+  uint256 internal constant MIN_BPOW_BASE = 1 wei;
+  uint256 internal constant MAX_BPOW_BASE = (2 * BONE) - 1 wei;
+  uint256 internal constant BPOW_PRECISION = BONE / 10**10;
+&nbsp;
+  // Maximum ratio of input tokens to balance for swaps.
+  uint256 internal constant MAX_IN_RATIO = BONE / 2;
+  // Maximum ratio of output tokens to balance for swaps.
+  uint256 internal constant MAX_OUT_RATIO = (BONE / 3) + 1 wei;
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 16 2020 20:12:37 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

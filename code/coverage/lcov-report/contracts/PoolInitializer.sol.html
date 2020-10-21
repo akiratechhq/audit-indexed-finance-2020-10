@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/PoolInitializer.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> PoolInitializer.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">69.88% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>58/83</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">34.21% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>13/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">66.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>14/21</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">71.26% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>62/87</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line medium'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.6.0;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import { IPool } from "./balancer/IPool.sol";
+import { UniSwapV2PriceOracle } from "./UniSwapV2PriceOracle.sol";
+import "@openzeppelin/contracts/math/SafeMath.sol";
+import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import { SafeERC20 } from "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
+&nbsp;
+&nbsp;
+/**
+ * @title PoolInitializer
+ * @author d1ll0n
+ * @dev Contract that acquires the initial balances for an index pool.
+ *
+ * This uses a short-term UniSwap price oracle to determine the ether
+ * value of tokens sent to the contract. When users contribute tokens,
+ * they are credited for the moving average ether value of said tokens.
+ * When all the tokens needed are acquired, the index pool will be
+ * initialized and this contract will receive the initial token supply (100).
+ *
+ * Once the contract receives the index pool tokens, users can claim their
+ * share of the tokens proportional to their credited contribution value.
+ */
+contract PoolInitializer {
+  using SafeMath for uint256;
+  using SafeERC20 for IERC20;
+&nbsp;
+/* ---  Constants  --- */
+&nbsp;
+  address internal immutable _controller;
+  UniSwapV2PriceOracle internal immutable _oracle;
+&nbsp;
+/* ---  Events  --- */
+&nbsp;
+  event TokensContributed(
+    address from,
+    address token,
+    uint256 amount,
+    uint256 credit
+  );
+&nbsp;
+/* ---  Storage  --- */
+  // Token amounts to purchase
+  mapping(address =&gt; uint256) internal _remainingDesiredAmounts;
+  // Value contributed in ether
+  mapping(address =&gt; uint256) internal _credits;
+  address[] internal _tokens;
+  // Total value in ether contributed to the pool, computed at the time
+  // of receipt.
+  uint256 internal _totalCredit;
+  // Whether all the desired tokens have been received.
+  bool internal _finished;
+  address internal _poolAddress;
+  bool internal _mutex;
+  uint256 internal constant TOKENS_MINTED = 1e20;
+&nbsp;
+/* ---  Modifiers  --- */
+&nbsp;
+  modifier _lock_ {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(!_mutex, "ERR_REENTRY");
+    _mutex = true;
+    _;
+    _mutex = false;
+  }
+&nbsp;
+  modifier _control_ {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(msg.sender == _controller, "ERR_NOT_CONTROLLER");
+    _;
+  }
+&nbsp;
+  modifier _finished_ {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(_finished, "ERR_NOT_FINISHED");
+    _;
+  }
+&nbsp;
+  modifier _not_finished_ {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(!_finished, "ERR_FINISHED");
+    _;
+  }
+&nbsp;
+/* ---  Constructor  --- */
+&nbsp;
+  constructor(
+    UniSwapV2PriceOracle oracle,
+    address controller
+  ) public {
+    _oracle = oracle;
+    _controller = controller;
+  }
+&nbsp;
+/* ---  Start &amp; Finish Functions  --- */
+&nbsp;
+  /**
+   * @dev Sets up the pre-deployment pool.
+   *
+   * @param poolAddress Address of the pool this pre-deployment pool is for
+   * @param tokens Array of desired tokens
+   * @param amounts Desired amounts of the corresponding `tokens`
+   */
+  function initialize(
+    address poolAddress,
+    address[] calldata tokens,
+    uint256[] calldata amounts
+  )
+    external
+    _control_
+  {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(_poolAddress == address(0), "ERR_INITIALIZED");
+    _poolAddress = poolAddress;
+    uint256 len = tokens.length;
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(amounts.length == len, "ERR_ARR_LEN");
+    _tokens = tokens;
+    for (uint256 i = 0; i &lt; len; i++) {
+      _remainingDesiredAmounts[tokens[i]] = amounts[i];
+    }
+  }
+&nbsp;
+  /**
+   * @dev Finishes the pre-deployment pool and triggers pool initialization.
+   *
+   * Note: The desired amounts of all tokens must be 0.
+  */
+  function finish()
+    external
+    _lock_
+    _not_finished_
+  {
+    uint256 len = _tokens.length;
+    address controller = _controller;
+    address[] memory tokens = new address[](len);
+    uint256[] memory balances = new uint256[](len);
+    for (uint256 i = 0; i &lt; len; i++) {
+      address token = _tokens[i];
+      tokens[i] = token;
+      uint256 balance = IERC20(token).balanceOf(address(this));
+      balances[i] = balance;
+      IERC20(token).safeApprove(_poolAddress, balance);
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        _remainingDesiredAmounts[token] == 0,
+        "ERR_PENDING_TOKENS"
+      );
+    }
+    PoolController(controller).finishPreparedIndexPool(
+      _poolAddress,
+      tokens,
+      balances
+    );
+    _finished = true;
+  }
+&nbsp;
+/* ---  Pool Token Claims  --- */
+&nbsp;
+  /**
+   * @dev Claims the tokens owed to `msg.sender` based on their proportion
+   * of the total credits.
+  */
+  function claimTokens() external _lock_ _finished_ {
+    _claimTokens(msg.sender);
+  }
+&nbsp;
+  /**
+   * @dev Claims the tokens owed to `account` based on their proportion
+   * of the total credits.
+  */
+<span class="fstat-no" title="function not covered" >  function claimTokens(address account) external _lock_ _finished_ {</span>
+<span class="cstat-no" title="statement not covered" >    _claimTokens(account)</span>;
+  }
+&nbsp;
+  /**
+   * @dev Claims the tokens owed to `account` based on their proportion
+   * of the total credits.
+  */
+<span class="fstat-no" title="function not covered" >  function claimTokens(address[] calldata accounts) external _lock_ _finished_ {</span>
+<span class="cstat-no" title="statement not covered" >    for (uint256 i = 0; i &lt; accounts.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      _claimTokens(accounts[i])</span>;
+    }
+  }
+&nbsp;
+/* ---  Contribution  --- */
+&nbsp;
+  /**
+   * @dev Contribute up to `amountIn` of `token` to the pool for credit.
+   * The caller will be credited for the average weth value of the provided
+   * tokens.
+   *
+   * Caller must receive at least `minimumCredit` to not revert.
+   *
+   * If `amountIn` is greater than the desired amount of `token`, the
+   * desired amount will be used instead. 
+   */
+<span class="fstat-no" title="function not covered" >  function contributeTokens(</span>
+    address token,
+    uint256 amountIn,
+    uint256 minimumCredit
+  )
+    external
+    _lock_
+    _not_finished_
+    returns (uint256 credit)
+  {
+<span class="cstat-no" title="statement not covered" >    uint256 desiredAmount = _remainingDesiredAmounts[token];</span>
+<span class="cstat-no" title="statement not covered" >    require(desiredAmount &gt; 0, "ERR_NOT_NEEDED")</span>;
+<span class="cstat-no" title="statement not covered" >    if (amountIn &gt; desiredAmount) {</span>
+<span class="cstat-no" title="statement not covered" >      amountIn = desiredAmount</span>;
+    }
+<span class="cstat-no" title="statement not covered" >    credit = _oracle.computeAverageAmountOut(token, amountIn)</span>;
+<span class="cstat-no" title="statement not covered" >    require(credit &gt; 0 &amp;&amp; amountIn &gt; 0, "ERR_ZERO_AMOUNT")</span>;
+<span class="cstat-no" title="statement not covered" >    require(credit &gt;= minimumCredit, "ERR_MIN_CREDIT")</span>;
+<span class="cstat-no" title="statement not covered" >    IERC20(token).safeTransferFrom(msg.sender, address(this), amountIn)</span>;
+<span class="cstat-no" title="statement not covered" >    _remainingDesiredAmounts[token] = desiredAmount.sub(amountIn)</span>;
+<span class="cstat-no" title="statement not covered" >    _credits[msg.sender] = _credits[msg.sender].add(credit)</span>;
+<span class="cstat-no" title="statement not covered" >    _totalCredit = _totalCredit.add(credit)</span>;
+<span class="cstat-no" title="statement not covered" >    emit TokensContributed(msg.sender, token, amountIn, credit);</span>
+  }
+&nbsp;
+  /**
+   * @dev Contribute maximum values from `amountsIn` of the corresponding
+   * tokens in `tokens` to the pool for credit.
+   *
+   * The caller will be credited for the average weth value of the provided
+   * tokens.
+   *
+   * Caller must receive at least `minimumCredit` to not revert.
+   *
+   * If any input amount is greater than the desired amount of the corresponding
+   * token, the desired amount will be used instead.
+   */
+  function contributeTokens(
+    address[] calldata tokens,
+    uint256[] calldata amountsIn,
+    uint256 minimumCredit
+  )
+    external
+    _lock_
+    _not_finished_
+    returns (uint256 credit)
+  {
+    uint256 len = tokens.length;
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(amountsIn.length == len, "ERR_ARR_LEN");
+    credit = 0;
+    for (uint256 i = 0; i &lt; len; i++) {
+      address token = tokens[i];
+      uint256 amountIn = amountsIn[i];
+      uint256 desiredAmount = _remainingDesiredAmounts[token];
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(desiredAmount &gt; 0, "ERR_NOT_NEEDED");
+      <span class="missing-if-branch" title="if path not taken" >I</span>if (amountIn &gt; desiredAmount) {
+<span class="cstat-no" title="statement not covered" >        amountIn = desiredAmount</span>;
+      }
+      uint256 creditOut = _oracle.computeAverageAmountOut(token, amountIn);
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(creditOut &gt; 0 &amp;&amp; amountIn &gt; 0, "ERR_ZERO_AMOUNT");
+      IERC20(token).safeTransferFrom(msg.sender, address(this), amountIn);
+      _remainingDesiredAmounts[token] = desiredAmount.sub(amountIn);
+      credit = credit.add(creditOut);
+      emit TokensContributed(msg.sender, token, amountIn, creditOut);
+    }
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(credit &gt;= minimumCredit, "ERR_MIN_CREDIT");
+    _credits[msg.sender] = _credits[msg.sender].add(credit);
+    _totalCredit = _totalCredit.add(credit);
+  }
+&nbsp;
+/* ---  Price Actions  --- */
+&nbsp;
+  /**
+   * @dev Updates the prices of all tokens.
+   */
+<span class="fstat-no" title="function not covered" >  function updatePrices() external {</span>
+<span class="cstat-no" title="statement not covered" >    _oracle.updatePrices(_tokens)</span>;
+  }
+&nbsp;
+/* ---  Status Queries  --- */
+&nbsp;
+  /**
+   * @dev Returns whether the pool has been initialized.
+   */
+<span class="fstat-no" title="function not covered" >  function isFinished() external view returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >    return _finished;</span>
+  }
+&nbsp;
+/* ---  Status Queries  --- */
+&nbsp;
+  /**
+   * @dev Returns the total value credited for token contributions.
+   */
+  function getTotalCredit() external view returns (uint256) {
+    return _totalCredit;
+  }
+&nbsp;
+  /**
+   * @dev Returns the amount of credit owed to `account`.
+   */
+  function getCreditOf(address account)
+    external
+    view
+    returns (uint256)
+  {
+    return _credits[account];
+  }
+&nbsp;
+/* ---  Token Queries  --- */
+&nbsp;
+  function getDesiredTokens()
+    external
+    view
+    returns (address[] memory tokens)
+  {
+    tokens = _tokens;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function getDesiredAmount(address token)</span>
+    external
+    view
+    returns (uint256)
+  {
+<span class="cstat-no" title="statement not covered" >    return _remainingDesiredAmounts[token];</span>
+  }
+&nbsp;
+  function getDesiredAmounts(address[] calldata tokens)
+    external
+    view
+    returns (uint256[] memory amounts)
+  {
+    amounts = new uint256[](tokens.length);
+    for (uint256 i = 0; i &lt; tokens.length; i++) {
+      amounts[i] = _remainingDesiredAmounts[tokens[i]];
+    }
+  }
+&nbsp;
+/* ---  External Price Queries --- */
+  /**
+   * @dev Get the amount of WETH the contract will credit a user
+   * for providing `amountIn` of `token`.
+   *
+   * Note: If `amountIn` is greater than the desired amount of
+   * `token`, this will calculate the output using the desired
+   * amount instead of `amountIn`.
+   */
+<span class="fstat-no" title="function not covered" >  function getCreditForTokens(address token, uint256 amountIn)</span>
+    external
+    view
+    returns (uint144 amountOut)
+  {
+<span class="cstat-no" title="statement not covered" >    uint256 desiredAmount = _remainingDesiredAmounts[token];</span>
+<span class="cstat-no" title="statement not covered" >    require(desiredAmount &gt; 0, "ERR_NOT_NEEDED")</span>;
+<span class="cstat-no" title="statement not covered" >    if (amountIn &gt; desiredAmount) {</span>
+<span class="cstat-no" title="statement not covered" >      amountIn = desiredAmount</span>;
+    }
+<span class="cstat-no" title="statement not covered" >    uint144 averageWethValue = _oracle.computeAverageAmountOut(token, amountIn);</span>
+<span class="cstat-no" title="statement not covered" >    amountOut = averageWethValue</span>;
+  }
+&nbsp;
+/* ---  Internal Claims Functions  --- */
+&nbsp;
+  /**
+   * @dev Claims pool tokens owed to `account` based on their
+   * proportion of the total credit.
+   * Note: Must be called in a function with the `_finished` modifier.
+   * Note: Must be called in a function with the `_lock_` modifier.
+   */
+  function _claimTokens(address account) internal {
+    uint256 credit = _credits[account];
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(credit &gt; 0, "ERR_NULL_CREDIT");
+    uint256 amountOut = (TOKENS_MINTED.mul(credit)).div(_totalCredit);
+    _credits[account] = 0;
+    IERC20(_poolAddress).safeTransfer(account, amountOut);
+  }
+}
+&nbsp;
+&nbsp;
+interface PoolController {
+  function finishPreparedIndexPool(
+    address poolAddress,
+    address[] calldata tokens,
+    uint256[] calldata balances
+  ) external;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 16 2020 20:12:37 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

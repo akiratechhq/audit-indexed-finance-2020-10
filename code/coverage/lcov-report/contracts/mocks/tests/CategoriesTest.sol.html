@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/mocks/tests/CategoriesTest.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">contracts/mocks/tests/</a> CategoriesTest.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.65% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>44/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">50% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>9/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">95.74% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>45/47</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">pragma solidity ^0.6.0;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import "../MockERC20.sol";
+import {
+  IUniswapV2Pair
+} from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol";
+import {
+  IUniswapV2Factory
+} from "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol";
+import {
+  IUniswapV2Router02
+} from "@uniswap/v2-periphery/contracts/interfaces/IUniswapV2Router02.sol";
+import { UniSwapV2PriceOracle } from "../../UniSwapV2PriceOracle.sol";
+import "../../MarketCapSortedTokenCategories.sol";
+import "./util/TestTokenMarkets.sol";
+import "./util/Diff.sol";
+import "./util/TestOrder.sol";
+import { PriceLibrary as Prices } from "../../lib/PriceLibrary.sol";
+&nbsp;
+&nbsp;
+contract CategoriesTest is TestTokenMarkets, Diff, TestOrder {
+  MarketCapSortedTokenCategories public categories;
+&nbsp;
+  constructor(
+    MockERC20 _weth,
+    IUniswapV2Factory _factory,
+    IUniswapV2Router02 _router,
+    MarketCapSortedTokenCategories _categories
+  ) public TestTokenMarkets(_weth, _factory, _router) {
+    categories = _categories;
+  }
+&nbsp;
+  function init() public {
+    _deployTokens();
+  }
+&nbsp;
+  function init2() public {
+    _deployMarkets();
+  }
+&nbsp;
+  function test_createCategory() public testIndex(0) {
+    uint256 index = categories.categoryIndex();
+    categories.createCategory(keccak256("Category 1"));
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      categories.categoryIndex() == index+1,
+      "Error: Category index does not match."
+    );
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(categories.hasCategory(index+1), "Error: hasCategory returned false");
+  }
+&nbsp;
+  function test_addToken() public testIndex(1) {
+    address[] memory tokens = categories.getCategoryTokens(1);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(tokens.length == 0, "Error: already added tokens");
+    categories.addToken(address(token1), 1);
+    tokens = categories.getCategoryTokens(1);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      tokens.length == 1 &amp;&amp; tokens[0] == address(token1),
+      "Error: token not added"
+    );
+    UniSwapV2PriceOracle oracle = categories.oracle();
+    Prices.PriceObservation memory observation = oracle.getPriceObservation(
+      address(token1),
+      oracle.observationIndexOf(block.timestamp)
+    );
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      observation.timestamp == uint32(block.timestamp),
+      "Error: price observation not made when token added"
+    );
+  }
+&nbsp;
+  function test_addTokens() public testIndex(2) markTime {
+    address[] memory tokens = new address[](4);
+    tokens[0] = address(token2);
+    tokens[1] = address(token3);
+    tokens[2] = address(token4);
+    tokens[3] = address(token5);
+&nbsp;
+    categories.addTokens(1, tokens);
+    address[] memory curTokens = categories.getCategoryTokens(1);
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(curTokens.length == 5, "Error: tokens not added");
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      curTokens[0] == address(token1) &amp;&amp;
+      curTokens[1] == address(token2) &amp;&amp;
+      curTokens[2] == address(token3) &amp;&amp;
+      curTokens[3] == address(token4) &amp;&amp;
+      curTokens[4] == address(token5),
+      "Error: token order incorrect"
+    );
+  }
+&nbsp;
+  function test_orderCategoryTokensByMarketCap() public testIndex(3) forceDelay(2 days) {
+    _addLiquidityAll();
+    address[] memory sortedTokens = tokensOrderedByPrice();
+    categories.orderCategoryTokensByMarketCap(1, sortedTokens);
+    address[] memory curTokens = categories.getCategoryTokens(1);
+    testArrayDeepEq(sortedTokens, curTokens, "Error: Sorted tokens not equal.");
+    uint144[] memory actualCaps = categories.getCategoryMarketCaps(1);
+    uint256[] memory expectedCaps = marketCapsOrderedByPrice(_liquidityAll);
+    testUintArrayDiff(
+      expectedCaps,
+      _to256Array(actualCaps),
+      "Error: getCategoryMarketCaps did not equal expected."
+    );
+  }
+&nbsp;
+  function test_getTopCategoryTokens() public testIndex(4) {
+    try categories.getTopCategoryTokens(0, 1) {
+<span class="cstat-no" title="statement not covered" >      revert("Error: Expected call to revert.")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_CATEGORY_ID"),
+        "Error: Expected ERR_CATEGORY_ID error message."
+      );
+    }
+    try categories.getTopCategoryTokens(2, 1) {
+<span class="cstat-no" title="statement not covered" >      revert("Error: Expected call to revert.")</span>;
+    } catch Error(string memory errorMsg) {
+      <span class="missing-if-branch" title="else path not taken" >E</span>require(
+        keccak256(abi.encodePacked(errorMsg)) == keccak256("ERR_CATEGORY_ID"),
+        "Error: Expected ERR_CATEGORY_ID error message."
+      );
+    }
+    address[] memory sortedTokens = tokensOrderedByPrice();
+    address[] memory curTokens = categories.getTopCategoryTokens(1, 5);
+    testArrayDeepEq(sortedTokens, curTokens, "Error: Sorted tokens not equal.");
+  }
+&nbsp;
+  function test_computeAverageMarketCaps() public testIndex(5) {
+    address[] memory sortedTokens = tokensOrderedByPrice();
+    uint256[] memory expectedCaps = marketCapsOrderedByPrice(_liquidityAll);
+    uint144[] memory actualCaps = categories.computeAverageMarketCaps(sortedTokens);
+    testUintArrayDiff(
+      expectedCaps,
+      _to256Array(actualCaps),
+      "Error: computeAverageMarketCaps did not equal expected."
+    );
+  }
+&nbsp;
+  function returnOwnership() external {
+    categories.setOwner(msg.sender);
+  }
+    
+  /**
+   * @dev Re-assigns a uint144 array to a uint256 array.
+   * This does not affect memory allocation as all Solidity
+   * uint arrays take 32 bytes per item.
+   */
+  function _to256Array(uint144[] memory arr)
+    internal
+    pure
+    returns (uint256[] memory outArr)
+  {
+    assembly { outArr := arr }
+  }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 16 2020 20:12:37 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

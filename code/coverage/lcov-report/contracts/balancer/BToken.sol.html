@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/balancer/BToken.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">contracts/balancer/</a> BToken.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.62% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>20/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">25% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>3/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">52.94% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">47.62% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>20/42</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-yes">15×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-yes">42×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.6.0;
+&nbsp;
+import "./BNum.sol";
+&nbsp;
+&nbsp;
+/************************************************************************************************
+Originally from https://github.com/balancer-labs/balancer-core/blob/master/contracts/BToken.sol
+&nbsp;
+This source code has been modified from the original, which was copied from the github repository
+at commit hash f4ed5d65362a8d6cec21662fb6eae233b0babc1f.
+&nbsp;
+Subject to the GPL-3.0 license
+*************************************************************************************************/
+&nbsp;
+&nbsp;
+// Highly opinionated token implementation
+interface IERC20 {
+  event Approval(address indexed src, address indexed dst, uint256 amt);
+  event Transfer(address indexed src, address indexed dst, uint256 amt);
+&nbsp;
+  function name() external view returns (string memory);
+&nbsp;
+  function symbol() external view returns (string memory);
+&nbsp;
+  function decimals() external view returns (uint8);
+&nbsp;
+  function totalSupply() external view returns (uint256);
+&nbsp;
+  function balanceOf(address whom) external view returns (uint256);
+&nbsp;
+  function allowance(address src, address dst) external view returns (uint256);
+&nbsp;
+  function approve(address dst, uint256 amt) external returns (bool);
+&nbsp;
+  function transfer(address dst, uint256 amt) external returns (bool);
+&nbsp;
+  function transferFrom(
+    address src,
+    address dst,
+    uint256 amt
+  ) external returns (bool);
+}
+&nbsp;
+&nbsp;
+contract BTokenBase is BNum {
+  mapping(address =&gt; uint256) internal _balance;
+  mapping(address =&gt; mapping(address =&gt; uint256)) internal _allowance;
+  uint256 internal _totalSupply;
+&nbsp;
+  event Approval(address indexed src, address indexed dst, uint256 amt);
+  event Transfer(address indexed src, address indexed dst, uint256 amt);
+&nbsp;
+  function _mint(uint256 amt) internal {
+    _balance[address(this)] = badd(_balance[address(this)], amt);
+    _totalSupply = badd(_totalSupply, amt);
+    emit Transfer(address(0), address(this), amt);
+  }
+&nbsp;
+  function _burn(uint256 amt) internal {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(_balance[address(this)] &gt;= amt, "ERR_INSUFFICIENT_BAL");
+    _balance[address(this)] = bsub(_balance[address(this)], amt);
+    _totalSupply = bsub(_totalSupply, amt);
+    emit Transfer(address(this), address(0), amt);
+  }
+&nbsp;
+  function _move(
+    address src,
+    address dst,
+    uint256 amt
+  ) internal {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(_balance[src] &gt;= amt, "ERR_INSUFFICIENT_BAL");
+    _balance[src] = bsub(_balance[src], amt);
+    _balance[dst] = badd(_balance[dst], amt);
+    emit Transfer(src, dst, amt);
+  }
+&nbsp;
+  function _push(address to, uint256 amt) internal {
+    _move(address(this), to, amt);
+  }
+&nbsp;
+  function _pull(address from, uint256 amt) internal {
+    _move(from, address(this), amt);
+  }
+}
+&nbsp;
+&nbsp;
+contract BToken is BTokenBase, IERC20 {
+  string private _name;
+  string private _symbol;
+  uint8 private _decimals = 18;
+&nbsp;
+  function _initializeToken(string memory name, string memory symbol) internal {
+    <span class="missing-if-branch" title="else path not taken" >E</span>require(
+      bytes(_name).length == 0 &amp;&amp;
+      bytes(name).length != 0 &amp;&amp;
+      bytes(symbol).length != 0,
+      "ERR_BTOKEN_INITIALIZED"
+    );
+    _name = name;
+    _symbol = symbol;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function name()</span>
+    external
+    override
+    view
+    returns (string memory)
+  {
+<span class="cstat-no" title="statement not covered" >    return _name;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function symbol()</span>
+    external
+    override
+    view
+    returns (string memory)
+  {
+<span class="cstat-no" title="statement not covered" >    return _symbol;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function decimals()</span>
+    external
+    override
+    view
+    returns (uint8)
+  {
+<span class="cstat-no" title="statement not covered" >    return _decimals;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function allowance(address src, address dst)</span>
+    external
+    override
+    view
+    returns (uint256)
+  {
+<span class="cstat-no" title="statement not covered" >    return _allowance[src][dst];</span>
+  }
+&nbsp;
+  function balanceOf(address whom) external override view returns (uint256) {
+    return _balance[whom];
+  }
+&nbsp;
+  function totalSupply() public override view returns (uint256) {
+    return _totalSupply;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function approve(address dst, uint256 amt) external override returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >    _allowance[msg.sender][dst] = amt</span>;
+<span class="cstat-no" title="statement not covered" >    emit Approval(msg.sender, dst, amt);</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function increaseApproval(address dst, uint256 amt) external returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >    _allowance[msg.sender][dst] = badd(_allowance[msg.sender][dst], amt)</span>;
+<span class="cstat-no" title="statement not covered" >    emit Approval(msg.sender, dst, _allowance[msg.sender][dst]);</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function decreaseApproval(address dst, uint256 amt) external returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >    uint256 oldValue = _allowance[msg.sender][dst];</span>
+<span class="cstat-no" title="statement not covered" >    if (amt &gt; oldValue) {</span>
+<span class="cstat-no" title="statement not covered" >      _allowance[msg.sender][dst] = 0</span>;
+    } else {
+<span class="cstat-no" title="statement not covered" >      _allowance[msg.sender][dst] = bsub(oldValue, amt)</span>;
+    }
+<span class="cstat-no" title="statement not covered" >    emit Approval(msg.sender, dst, _allowance[msg.sender][dst]);</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  }
+&nbsp;
+  function transfer(address dst, uint256 amt) external override returns (bool) {
+    _move(msg.sender, dst, amt);
+    return true;
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  function transferFrom(</span>
+    address src,
+    address dst,
+    uint256 amt
+  ) external override returns (bool) {
+<span class="cstat-no" title="statement not covered" >    require(</span>
+      msg.sender == src || amt &lt;= _allowance[src][msg.sender],
+      "ERR_BTOKEN_BAD_CALLER"
+    );
+<span class="cstat-no" title="statement not covered" >    _move(src, dst, amt)</span>;
+<span class="cstat-no" title="statement not covered" >    if (msg.sender != src &amp;&amp; _allowance[src][msg.sender] != uint256(-1)) {</span>
+<span class="cstat-no" title="statement not covered" >      _allowance[src][msg.sender] = bsub(_allowance[src][msg.sender], amt)</span>;
+<span class="cstat-no" title="statement not covered" >      emit Approval(msg.sender, dst, _allowance[src][msg.sender]);</span>
+    }
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Oct 16 2020 20:12:37 GMT+0300 (Eastern European Summer Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
