@@ -329,7 +329,7 @@ Another way to improve contract size is by breaking them into multiple smaller c
 
 ## Issues
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - Add `_viewlock_` to view methods](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/9)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - Add `_viewlock_` to view methods](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/9)
 
 **Description**
 
@@ -360,7 +360,7 @@ An [instance](https://defirate.com/imbtc-uniswap-hack/), where the described iss
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - Flash borrow does not update the true `denorm` if the token was not previously ready](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/15)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - Flash borrow does not update the true `denorm` if the token was not previously ready](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/15)
 
 **Description**
 
@@ -411,7 +411,7 @@ Compute and save the real `denorm` to reduce the risk of unintended consequences
 
 ---
 
-### [![Issue status: Acknowledged](https://img.shields.io/static/v1?label=Status&message=Acknowledged&color=blue&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - `gulp` should check if the token exists before updating state and executing outside code](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/8)
+### [![Issue status: Acknowledged](https://img.shields.io/static/v1?label=Status&message=Acknowledged&color=blue&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - `gulp` should check if the token exists before updating state and executing outside code](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/8)
 
 **Description**
 
@@ -471,7 +471,7 @@ However, after checking the generated assembly, we realized Solidity already use
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - Caching storage data does not decrease gas cost in all cases](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/6)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [IPool] - Caching storage data does not decrease gas cost in all cases](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/6)
 
 **Description**
 
@@ -606,7 +606,7 @@ To
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [MarketCapSqrtController] - Limit update of seller premium to only owner](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/3)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Medium](https://img.shields.io/static/v1?label=Severity&message=Medium&color=orange&style=flat-square) [MarketCapSqrtController] - Limit update of seller premium to only owner](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/3)
 
 **Description**
 
@@ -654,7 +654,7 @@ Add tests to check if only the owner can call `updateSellerPremiumToDefault`.
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [UnboundTokenSeller] - Check for received tokens should be more strict](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/17)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [UnboundTokenSeller] - Check for received tokens should be more strict](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/17)
 
 **Description**
 
@@ -706,11 +706,11 @@ This should not change the gas cost but increases readability and makes sure an 
 
 **Recommendation**
 
-Replace the inequality check (`!=`) with greater than (`>`) in both methods.
+Replace the inequality check (`!=`) with inequality check for both methods.
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [UnboundTokenSeller] - Decrease gas cost when swapping tokens in Uniswap](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/18)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [UnboundTokenSeller] - Decrease gas cost when swapping tokens in Uniswap](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/18)
 
 **Description**
 
@@ -760,7 +760,7 @@ https://github.com/Uniswap/uniswap-v2-periphery/blob/master/contracts/UniswapV2R
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [UnboundTokenSeller] - Remove unused `_calcAmountToCallerAndPool` method](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/19)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [UnboundTokenSeller] - Remove unused `_calcAmountToCallerAndPool` method](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/19)
 
 **Description**
 
@@ -799,7 +799,7 @@ Remove unused method.
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - Some methods use implicit and explicit returns](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/16)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - Some methods use implicit and explicit returns](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/16)
 
 **Description**
 
@@ -973,7 +973,7 @@ Some people want to [enable warnings if implicit returns are used](https://githu
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - Remove commented out code in method `initialize`](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/12)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - Remove commented out code in method `initialize`](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/12)
 
 **Description**
 
@@ -993,7 +993,7 @@ Remove commented-out code.
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - `LOG_PUBLIC_SWAP_TOGGLED` is only set to true](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/11)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - `LOG_PUBLIC_SWAP_TOGGLED` is only set to true](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/11)
 
 **Description**
 
@@ -1027,7 +1027,7 @@ Rename event to describe only public enabling of swaps.
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - `_setDesiredDenorm` in memory record update serves no purpose](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/10)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - `_setDesiredDenorm` in memory record update serves no purpose](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/10)
 
 **Description**
 
@@ -1052,7 +1052,7 @@ Remove the line that updates `desiredDenorm`.
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - Remove unused `_to256Array` method](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/5)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - Remove unused `_to256Array` method](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/5)
 
 **Description**
 
@@ -1079,7 +1079,7 @@ Remove the unused method because it creates apparent complexity, especially beca
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - Method `_updateInputToken` can desynchronize state](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/7)
+### [![Issue status: Acknowledged](https://img.shields.io/static/v1?label=Status&message=Acknowledged&color=blue&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [IPool] - Method `_updateInputToken` can desynchronize state](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/7)
 
 **Description**
 
@@ -1142,7 +1142,7 @@ Consider using storage pointers instead of in-memory instances of `Record`.
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - Method `_havePool` can be rewritten as a modifier](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/4)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - Method `_havePool` can be rewritten as a modifier](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/4)
 
 **Description**
 
@@ -1179,7 +1179,7 @@ Reduce code complexity by rewriting the method as a modifier and require the poo
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - The arguments should match the saved types](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/1)
+### [![Issue status: Fixed](https://img.shields.io/static/v1?label=Status&message=Fixed&color=green&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - The arguments should match the saved types](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/1)
 
 **Description**
 
@@ -1251,7 +1251,7 @@ Another way to go about this is to save `categoryID` and `indexSize` as `uint256
 
 ---
 
-### [![Issue status: Pending](https://img.shields.io/static/v1?label=Status&message=Pending&color=yellow&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - Initializer and seller address can be slightly gas optimized](https://github.com/cleanunicorn/audit-indexed-finance-2020-10/issues/2)
+### [![Issue status: Acknowledged](https://img.shields.io/static/v1?label=Status&message=Acknowledged&color=blue&style=flat-square) ![Minor](https://img.shields.io/static/v1?label=Severity&message=Minor&color=yellow&style=flat-square) [MarketCapSqrtController] - Initializer and seller address can be slightly gas optimized](https://github.com/monoceros-alpha/audit-indexed-finance-2020-10/issues/2)
 
 **Description**
 
